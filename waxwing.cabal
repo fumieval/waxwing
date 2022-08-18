@@ -1,0 +1,43 @@
+cabal-version:      3.0
+name:               waxwing
+version:            0
+synopsis:           waxwing programming language
+-- description:
+homepage:           https://github.com/fumieval/waxwing
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Fumiaki Kinoshita
+maintainer:         fumiexcel@gmail.com
+-- copyright:
+category:           Language
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+executable waxwing
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:
+        AST
+        Eval
+        Parser
+    -- other-extensions:
+    build-depends:    base >= 4.14 && <5,
+        megaparsec,
+        optparse-applicative,
+        text,
+        bytestring,
+        parser-combinators,
+        containers,
+        mtl
+    hs-source-dirs:   app
+    default-language: GHC2021
+    default-extensions:
+        LambdaCase
+        DataKinds
+        TypeFamilies
+        RecordWildCards
+        RankNTypes

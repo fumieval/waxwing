@@ -1,0 +1,22 @@
+fizzbuzz = {
+  arg i;
+  if {
+    0 = i % 3;
+    0 = i % 5;
+    "FizzBuzz"
+  }
+  else {
+    0 = i % 3;
+    "Fizz"
+  }
+  else {
+    0 = i % 5;
+    "Buzz"
+  }
+  else { toString i }
+};
+
+{
+  for p = range 1 15;
+  print (fizzbuzz p)
+}
